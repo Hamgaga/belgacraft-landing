@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BelgaCraft • Landing</title>
+  <meta name="description" content="Distribution de bières belges. Contact NSI Luxembourg." />
+  <meta property="og:title" content="BelgaCraft • Landing" />
+  <meta property="og:description" content="Distribution de bières belges. Contact NSI Luxembourg." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo-belgacraft.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f172a;        /* bleu nuit */
+      --card:#111827;      /* gris anthracite */
+      --accent:#0ea5e9;    /* cyan */
+      --accent-2:#fbbf24;  /* jaune houblon */
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;
+      color:var(--text); background:
+      radial-gradient(1000px 600px at 10% 0%, #0b1220 0%, var(--bg) 60%),
+      radial-gradient(800px 500px at 90% 10%, #0b1220 0%, var(--bg) 60%),
+      var(--bg);
+      line-height:1.5;
+    }
+    header{max-width:1100px;margin:0 auto;padding:28px 20px;display:flex;gap:14px;align-items:center}
+    header img{height:52px;width:auto}
+    header .brand{font-weight:800;letter-spacing:.5px}
+    main{max-width:1100px;margin:0 auto;padding:40px 20px 80px}
+    .hero{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;
+    }
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .card{
+      background:linear-gradient(180deg,#0f1a2d, var(--card));
+      border:1px solid #1f2937;border-radius:18px;padding:28px;
+      box-shadow:0 30px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+    }
+    h1{font-size:clamp(28px,4vw,44px);margin:6px 0 6px}
+    p.lead{color:var(--muted);font-size:clamp(16px,2.2vw,18px);margin:0 0 16px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 20px}
+    .badge{font-size:13px;background:#0b1220;color:#d1d5db;border:1px solid #1f2937;border-radius:999px;padding:6px 10px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:12px 16px;border-radius:12px;border:1px solid transparent;
+      background:var(--accent);color:#08121c;font-weight:700;text-decoration:none
+    }
+    .btn.alt{background:transparent;border-color:#334155;color:#e5e7eb}
+    .btn.yellow{background:var(--accent-2);color:#1f2937}
+    .panel{
+      margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:18px
+    }
+    @media (max-width:900px){.panel{grid-template-columns:1fr}}
+    .qr-wrap{display:flex;flex-direction:column;align-items:center;gap:10px}
+    .qr{background:#fff;border-radius:12px;padding:12px;border:1px solid #e5e7eb}
+    footer{max-width:1100px;margin:40px auto 60px;color:#6b7280;padding:0 20px}
+    .mini{font-size:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/logo-belgacraft.png" alt="BelgaCraft logo">
+    <div class="brand">BELGACRAFT • BIÈRE SANS ALCOOL</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="card">
+        <h1>Distribution belge moderne, pilotée par Dynamics 365 Business Central</h1>
+        <p class="lead">
+          Une chaîne <strong>achats-stock-ventes-compta</strong> fluide, en Cloud, sans Excel dispersés.
+          Démo, cadrage et déploiement avec <strong>NSI Luxembourg</strong>.
+        </p>
+        <div class="badges">
+          <span class="badge">Traçabilité lot / DLC</span>
+          <span class="badge">Prix promo / consignation</span>
+          <span class="badge">E-invoice & TVA BE/LU</span>
+          <span class="badge">Power BI ready</span>
+        </div>
+        <div class="cta">
+          <a class="btn yellow" id="demoBtn" href="#" target="_blank" rel="noopener">Demander une démo</a>
+          <a class="btn alt" href="#contact">Coordonnées NSI Luxembourg</a>
+        </div>
+
+        <div class="panel">
+          <div>
+            <h3>Pourquoi BelgaCraft ?</h3>
+            <ul>
+              <li>Catalogue bières, y compris 0.0, avec variantes & packs</li>
+              <li>Prévisions & ruptures – alertes achats</li>
+              <li>Logistique scan (codes-barres / QR), tournées</li>
+              <li>Paiements, lettrages, relances automatiques</li>
+            </ul>
+          </div>
+          <div class="qr-wrap">
+            <div id="qr" class="qr">
+              <!-- image QR injectée par JS -->
+            </div>
+            <div class="mini">Scanne ce QR pour revenir sur cette page</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/logo-belgacraft.png" alt="BelgaCraft" style="width:100%;border-radius:12px;background:#0b1220;padding:16px">
+        <p style="color:var(--muted);margin-top:10px">
+          Identité visuelle épurée et claire. Intégration possible dans Business Central (Company badge / logo documents).
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:28px">
+      <h2 style="margin-top:0">Contact — NSI Luxembourg</h2>
+      <p>Remplace les lignes ci-dessous par les vraies infos.</p>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;gap:6px">
+        <li><strong>Email :</strong> <a href="mailto:contact@nsi.lu">contact@nsi.lu</a></li>
+        <li><strong>Téléphone :</strong> <a href="tel:+352000000000">+352 00 00 00 00</a></li>
+        <li><strong>Adresse :</strong> NSI Luxembourg, [Adresse complète]</li>
+        <li><strong>Site :</strong> <a href="https://www.nsi.lu" target="_blank" rel="noopener">https://www.nsi.lu</a></li>
+      </ul>
+      <div class="cta" style="margin-top:14px">
+        <a class="btn" href="mailto:contact@nsi.lu?subject=Demande%20de%20d%C3%A9mo%20Business%20Central%20BelgaCraft">Écrire un email</a>
+        <a class="btn alt" href="https://www.nsi.lu" target="_blank" rel="noopener">Visiter le site NSI</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mini">
+    © BelgaCraft — page démo pour rendez-vous pre-sales Business Central
+  </footer>
+
+  <script>
+    // 1) URL de la landing = l'URL actuel (marche tout seul sur GitHub Pages)
+    const landingUrl = window.location.href;
+
+    // 2) Lien du bouton "Demander une démo" -> mailto par défaut (change si besoin)
+    const demoBtn = document.getElementById('demoBtn');
+    demoBtn.href = "mailto:contact@nsi.lu?subject=Demande%20de%20d%C3%A9mo%20Business%20Central%20BelgaCraft&body=Bonjour%20NSI%2C%0AJe%20souhaite%20voir%20une%20d%C3%A9mo%20...";
+
+    // 3) Générer le QR sans librairie, via un service image (dynamique)
+    const qr = document.getElementById('qr');
+    const img = new Image();
+    const size = 220;
+    img.width = size; img.height = size;
+    img.alt = "QR code vers la landing";
+    img.src = "https://api.qrserver.com/v1/create-qr-code/?size="+size+"x"+size+"&data=" + encodeURIComponent(landingUrl);
+    qr.appendChild(img);
+  </script>
+</body>
+</html>
